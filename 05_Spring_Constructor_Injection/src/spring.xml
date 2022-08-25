@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="com.ofss.main.pojo.Address"
+		scope="prototype" />
+
+	<!-- Dependency Injection Using Spring XML -->
+	<!-- Manual Wiring -->
+	<!-- Setter Injection -->
+	<!-- <bean id="employee" class="com.ofss.main.pojo.Employee" scope="prototype"> -->
+	<!-- <property name="homeAddress" ref="address"></property> -->
+	<!-- </bean> -->
+
+	<!-- Dependency Injection Using Spring XML -->
+	<!-- Manual Wiring -->
+	<!-- Constructor Injection -->
+	<bean id="employee" class="com.ofss.main.pojo.Employee"
+		scope="prototype">
+		<constructor-arg name="employeeId" value="0" />
+		<constructor-arg name="name" value="" />
+		<constructor-arg name="salary" value="0.0" />
+		<constructor-arg name="homeAddress" ref="address" />
+	</bean>
+</beans>
+
